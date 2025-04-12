@@ -1,0 +1,121 @@
+#mask {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(3);
+    opacity: 0;
+    animation: maskEntrance 2s ease-in-out forwards;
+    z-index: 1000;
+}
+
+#mask {
+    width: 150px;
+    height: auto;
+}
+
+@keyframes maskEntrance {
+    0% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+@keyframes fallMoney {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;700&display=swap');
+        
+        body {
+            background-image: url('hiest-background.jpg'); /* Add a heist-themed background image */
+            background-size: fit-cover;
+            background-attachment: fixed;
+            background-color: #000; /* Fallback color */
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: 'Oswald', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            margin-top: 100px;
+        }
+        h1 {
+            font-size: 60px;
+            color: #d90429; /* Heist-style red */
+            text-transform: uppercase;
+            text-shadow: 2px 2px 8px black;
+        }
+        .search-box {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            padding: 12px;
+            width: 50%;
+            font-size: 20px;
+            border-radius: 8px;
+            border: 3px solid #d90429;
+            text-align: center;
+            background: rgb(255, 255, 255);
+            color: rgb(10, 10, 10);
+            opacity: 0.5;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 20px;
+            margin-left: 10px;
+            background-color: #d90429;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #a30000;
+        }
+        .results {
+            margin-top: 30px;
+            text-align: center;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 22px;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            border: 2px solid #d90429;
+        }
+        
+        /* Falling Money Animation */
+        @keyframes fallMoney {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        .money {
+            position: absolute;
+            top: -10px;
+            left: calc(50% - 10px);
+            width: 50px;
+            height: auto;
+            animation: fallMoney 2s linear infinite;
+        }
+        
+        /* Dali Mask Entrance */
+        #mask-container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(3);
+            opacity: 0;
+            animation: maskEntrance 3s ease-in-out forwards;
+            z-index: 1000;
+        }
+        
+        @keyframes maskEntrance {
+            0% { transform: translate(-50%, -50%) scale(5); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+        }
